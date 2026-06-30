@@ -1,4 +1,8 @@
 // Export pages
+export '/pages/login/login_widget.dart'
+    show LoginWidget;
+export '/pages/main_navigation/main_navigation_widget.dart'
+    show MainNavigationWidget;
 export '/pages/home_dashboard/home_dashboard_widget.dart'
     show HomeDashboardWidget;
 export '/pages/scan_camera/scan_camera_widget.dart' show ScanCameraWidget;

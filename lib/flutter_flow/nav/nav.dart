@@ -40,13 +40,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => HomeDashboardWidget(),
+      errorBuilder: (context, state) =>  LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => HomeDashboardWidget(),
+          builder: (context, _) => LoginWidget(),
         ),
+        FFRoute(
+          name: LoginWidget.routeName,
+          path: LoginWidget.routePath,
+          builder: (context, params) => LoginWidget(),
+          ),
+        FFRoute(
+          name: MainNavigationWidget.routeName,
+          path: MainNavigationWidget.routePath,
+          builder:(context, params)=>
+          MainNavigationWidget(),
+          ),
         FFRoute(
           name: HomeDashboardWidget.routeName,
           path: HomeDashboardWidget.routePath,
@@ -74,8 +85,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         ),
         FFRoute(
           name: CalledWasteresultscreenPageWidget.routeName,
+
           path: CalledWasteresultscreenPageWidget.routePath,
-          builder: (context, params) => CalledWasteresultscreenPageWidget(),
+          
+          builder: (context, params)
+            => CalledWasteresultscreenPageWidget(),
         ),
         FFRoute(
           name: CalledGamescreenPageWidget.routeName,
